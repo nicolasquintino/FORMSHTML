@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário HTML</title>
+</head>
+<header>
+    <h1>Formulário HTML</h1>
+</header>
+
+<hr>
+
+<body>
+    <section>
+        <h2>O que é um "Formulário HTML"?</h2>
+        <p>Formulários HTML são um dos principais pontos de interação entre um usuário e um web site ou aplicativo. Eles permitem que os usuários enviem dados para o web site. Na maior parte do tempo, os dados são enviados para o servidor da web, mas a página da web também pode interceptar para usá-los por conta própria.</p>
+        <p>Um formulário HTML é feito de um ou mais widgets. Esses widgets podem ser campos de texto (linha única ou de várias linhas), caixas de seleção, botões, checkboxes ou radio buttons. A maior parte do tempo, estes elementos são emparelhados com uma legenda que descreve o seu objetivo.</p>
+        <br>   
+    </section>
+
+    <section>
+        <h2>Utilização Formulário</h2>
+        <h4>Elemento "form"</h4>
+        <p>Este elemento define um formulário. É um elemento de container como um elemento "div" ou "p" , mas ele também suporta alguns atributos específicos para configurar a forma como o formulário se comporta. Todos os seus atributos são opcionais, mas é considerada a melhor prática sempre definir pelo menos o atributo action e o atributo method.</p>
+        <h5>Ex:</h5>
+        <img src="ex1.png">
+        <h4>O que é GET e POST?</h4>
+        <p>Eles indicam para o servidor qual a ação que o cliente deseja realizar. Quando realizamos uma requisição obrigatoriamente precisamos informar um método.</p>
+        <p>Quando o usuário digita um endereço e aperta enter na barra de endereço do navegador, ele realiza uma requisição do tipo GET. Já quando preenchemos um formulário e clicamos em enviar geralmente o método usado é o POST.</p>
+        <h4>Adicionar campos com os elementos "label" , "input" , e "textarea"</h4>
+        <p>O campo de entrada para o nome será um campo básico texto de linha única("input"); o campo de entrada do e-mail será um campo de texto com uma única linha("input") que vai aceitar apenas um endereço de e-mail; o campo de entrada para a mensagem será um campo de texto de várias linhas("textarea").</p>
+        <form action="/form.html" method="post">
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" />
+            </div>
+            <div>
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" />
+            </div>
+            <div>
+              <label for="msg">Mensagem:</label>
+              <textarea id="msg"></textarea>
+            </div>
+          </form>
+    </section>
+
+    <hr>
+
+    <section>
+        <h1>INPUT</h1>
+        <hr>
+        <h2>O que é INPUT em HTML?</h2>
+        <p>A tag input em HTML é uma das mais utilizadas dentro de um formulário HTML e considerada a principal. Esta tag representa os campos de entrada de dados de um formulário.</p>
+        
+        <h3>Atributos INPUT</h3>
+        <p>O atributo mais importante da tag "input" é o atributos <b>type</b>. Esse atributo representa o tipo de campo de entrada ao qual essa tag pertence e como ele se comporta. Portanto, declarar o atributo type é um pré-requisito para utilizar a tag "input".</p>
+        <br>
+        <p>Outro atributo importante para a tag "input" é o atributo <b>name</b>, que define um nome para o campo de entrada. Este recurso é muito útil para conseguir identificar os campos através dos métodos GET e POST<b>(já citado anteriormente nesse documento)</b>.</p>
+        <br>
+        <p>Outro atributo que também merece destaque é o <b>placeholder</b>, pois esse atributo permite digitarmos uma “descrição” que será visualizada enquanto o campo de entrada não possuir nenhum valor.</p>
+        <br>
+        <p>Há ainda um atributo bastante utilizado, que garante que aquele campo tenha seu preenchimento obrigatório para validar e permitir o envio do formulário: o atributo <b>required</b>. Portanto, sempre que precisar manter o preenchimento de um campo obrigatório, basta utilizar este atributo.</p>
+
+        <h2>Exemplos de INPUT</h3>
+
+        <h5>TEXT</h5>
+        <p>Define um campo de texto	</p>
+
+        <h5>EMAIL</h5>
+        <p>Define um campo de e-mail.</p>
+
+        <h5>SUBMIT</h5>
+        <p>Define um botão de envio do formulário HTML.</p>
+
+        <h5>Exemplo de input type=text, email e submit juntos:</h5>
+
+        <form method="get" action="form.html">
+            <input type="text" name="nome" placeholder="digite seu Nome aqui">
+            <input type="e-mail" name="email" placeholder="Digite seu e-mail">
+            <input type="submit" name="enviar" value="Enviar">   
+        </form>
+
+        <h5>BUTTON</h5>
+        <p>Define um botão.</p>
+        <h5>Ex:</h5>
+        <form>
+            <input type="button" value="Clique Aqui" onclick="msg()">
+        </form>
+
+        <h5>CHECKBOX</h5>
+        <p>Define uma caixa de checagem.</p>
+        <h5>Ex:</h5>
+        <form>
+            <input type="checkbox" name="veiculo1" value="bicicleta">GTA Vice City<br>
+            <input type="checkbox" name="veiculo2" value="carro">GTA VI<br>
+            <input type="checkbox" name="veiculo3" value="moto">GTA SAN ANDREAS<br>
+            <input type="checkbox" name="veiculo3" value="moto">GTA V<br>
+        </form>
+
+        <h5>COLOR</h5>
+        <p>Define uma caixa de cores.</p>
+        <h5>Ex:</h5>
+        <form>
+            Seleciona uma cor que quiser aí: <input type="color" name="favcor" value="#0000FF">
+        </form>
+        <br>
+        <h5>DATE</h5>
+        <p>Define um campo de data.</p>
+        <h5>Ex:</h5>
+        <form>
+            Data de nascimento: <input type="date" name="nascimento">
+        </form>
+        <br>
+
+        <h5>DATETIME-LOCAL</h5>
+        <p>Define um campo de data e horário.</p>
+        <h5>Ex:</h5>
+        <form>
+            Data de nascimento: <input type="datetime-local" name="bdaytime">
+        </form>
+        <br>
+        <h5>FILE</h5>
+        <p>Define uma campo para upload de arquivos.</p>
+        <h5>Ex:</h5>
+        <form>
+            <input type="file" name="arquivos">
+        </form>
+        <br><br><br>
+        
+        <h5>SE QUISER DAR UPLOAD DE MAIS ARQUIVOS</h5>
+        <form>
+            <input type="file" name="arquivos" multiple>
+        </form>
+        <br>
+        <h5>HIDDEN</h5>
+        <p>Define um campo oculto.</p>
+        <h5>Ex:</h5>
+        <input type="hidden" id="inputOculto" name="inputOculto" value="meuvalor">
+
+        <h5>IMAGE</h5>
+        <p>Define uma imagem como botão de envio do formulário HTML.</p>
+        <h5>Ex:</h5>
+        <form action="/action_page.php">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br>
+            <input type="image" src="Castor chinês (DUBLADO).gif" alt="Submit" width="48" height="48">
+        </form>
+
+        <h5>NUMBER</h5>
+        <p>Define um campo de intervalo de número.</p>
+        <h5>Ex:</h5>
+        <form>
+            Quantidade (entre 1 e 5): <input type="number" name="quantidade" min="1" max="5">    
+        </form>
+
+        <h5>PASSWORD</h5>
+        <p>Define um campo de senha (mascarando-a).</p>
+        <h5>Ex:</h5>
+        <form>
+            <input type="password" name="senha" placeholder="Digite sua Senha">
+        </form>
+
+        <h5>RADIO</h5>
+        <p>Define um campo de opção(radio).</p>
+        <h5>Ex:</h5>
+        <form>
+            <p>Qual sua idade?</p>
+            <input type="radio" name="idade" value="18_22">18 a 22 <br>
+            <input type="radio" name="idade" value="23_30">23 a 30 <br>
+            <input type="radio" name="idade" value="mais31">acima de 31<br>
+        </form>
+
+
+        <h5>RANGE</h5>
+        <p>Define um controle de intervalo.</p>
+        <h5>Ex:</h5>
+        <form>
+            Defina seu nível de satisfação:<br>
+            pouco satisfeito
+            <input type="range" name="satisfacao" min="0" max="10">
+            muito satisfeito
+        </form>
+
+        <h5>RESET</h5>
+        <p>Define um botão para reiniciar aos valores iniciais.	</p>
+        <h5>Ex:</h5>
+        <form>
+            <input type="reset">
+        </form>
+
+        <h5>SEARCH</h5>
+        <p>Define um campo de pesquisa</p>
+        <h5>Ex:</h5>
+        <form>
+            Pesquisar: <input type="search" name="q">
+        </form>
+
+
+        <h5>URL</h5>
+        <p>Define um campo de URL</p>
+        <h5>Ex:</h5>
+        <form>
+            Link do seu WebSite: <input type="url" name="webpage">
+        </form>
+
+
+
+    </section>
+</body>
+</html>
